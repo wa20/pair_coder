@@ -33,7 +33,7 @@ function CreateRoomForm() {
       name: "",
       description: "",
       gitHubRepo: "",
-      language: "English UK"
+      language: ""
     },
   });
 
@@ -42,16 +42,16 @@ function CreateRoomForm() {
     // ✅ This will be type-safe and validated.
     console.log(values)
   }
-  
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 pt-10">
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Name</FormLabel>
               <FormControl>
                 <Input placeholder="Public Room Name..." {...field} />
               </FormControl>
@@ -67,7 +67,7 @@ function CreateRoomForm() {
           name="description"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Description</FormLabel>
               <FormControl>
                 <Input placeholder="Room Description..." {...field} />
               </FormControl>
@@ -79,12 +79,12 @@ function CreateRoomForm() {
           )}
         />
 
-<FormField
+        <FormField
           control={form.control}
           name="gitHubRepo"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Git Hub Repo</FormLabel>
               <FormControl>
                 <Input placeholder="Room Description..." {...field} />
               </FormControl>
@@ -96,14 +96,14 @@ function CreateRoomForm() {
           )}
         />
 
-<FormField
+        <FormField
           control={form.control}
           name="language"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Primary Programming language</FormLabel>
               <FormControl>
-                <Input placeholder="Select Language..." {...field} />
+                <Input placeholder="What language would you like to cover..." {...field} />
               </FormControl>
               <FormDescription>
                 Describe room use.
